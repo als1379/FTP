@@ -1,17 +1,16 @@
-package Client;
-
-import javax.sound.midi.Soundbank;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class MainClient {
     public static User loginUser = null;
     public static ArrayList<User> users = new ArrayList<>();
     public static void main(String[] args) throws IOException {
         Scanner in = new Scanner(System.in);
         int todo = -1;
         boolean flag = false;
+        Client client= new Client();
+
         while (todo != 0) {
             if (!flag)
                 System.out.println("1-login/register");
@@ -24,10 +23,17 @@ public class Main {
             if (flag)
                 System.out.println("5-logOut");
             System.out.println("0-exit");
-            client client= new client();
-            todo = in.nextInt();
-            String KK = in.nextLine();
+            String todoo = in.nextLine();
+            try {
+                todo = Integer.valueOf(todoo);
+            }
+            catch (Exception e){
+                System.out.println("Ivalid Command");
+            }
             switch(todo){
+                case 0:
+                    client.logOut();
+                    break;
                 case 1:
                     while(true) {
                         System.out.println("Please enter your username");
@@ -52,6 +58,7 @@ public class Main {
                     client.list();
                     break;
                 case 5:
+                    client.logOut();
                     flag = false;
                     break;
                 default:

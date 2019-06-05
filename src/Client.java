@@ -1,29 +1,31 @@
-package Client;
 
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class client {
+public class Client {
+    public User user = null;
     public Socket socket = null;
     public void clientStart(User user) {
-        Scanner in = new Scanner(System.in);
-        String name = in.nextLine();
+        this.user=user;
         DataOutputStream output = null;
         try {
             socket = new Socket("localhost",8888);
             output = new DataOutputStream(socket.getOutputStream());
-            output.writeUTF(name);
-            name = in.next();
+            output.writeUTF(user.getUsername());
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public User getUser(){
+        return user;
     }
     public void upload(String path) throws IOException {
         File file = new File(path);
         byte[] bytes = new byte[16 * 1024];
         InputStream in = new FileInputStream(file);
-        OutputStream out = socket.getOutputStream();
+        DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+        out.writeUTF("UPLOAD");
         int count;
         while ((count = in.read(bytes)) > 0) {
             out.write(bytes, 0, count);
@@ -35,6 +37,15 @@ public class client {
 
     }
     public void list(){
+        System.out.println(user.files);
+    }
+    public void logOut(){
+        try {
+            DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+            out.writeUTF("END");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }

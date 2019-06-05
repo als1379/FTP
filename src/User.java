@@ -1,7 +1,5 @@
-package Client;
 
 import java.util.ArrayList;
-import java.util.SplittableRandom;
 
 public class User {
     private String username;

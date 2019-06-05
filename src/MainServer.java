@@ -1,6 +1,4 @@
-package Server;
-
-public class Main {
+public class MainServer {
     public static void main(String[] args) {
         FTPserver server = new FTPserver();
         server.startServer();
