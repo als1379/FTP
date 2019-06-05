@@ -25,7 +25,10 @@ public class Client {
         byte[] bytes = new byte[16 * 1024];
         InputStream in = new FileInputStream(file);
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+        System.out.println("HELLO");
         out.writeUTF("UPLOAD");
+        System.out.println("HELLO");
+        out.writeUTF(path);
         int count;
         while ((count = in.read(bytes)) > 0) {
             out.write(bytes, 0, count);

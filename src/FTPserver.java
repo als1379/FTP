@@ -22,39 +22,69 @@ public class FTPserver {
     public class ClientHandler extends Thread{
         private DataInputStream input;
         private DataOutputStream output;
+        private FileOutputStream outFile;
+        private InputStream in = null;
 
         public ClientHandler(Socket client)  {
             try {
                 input=new DataInputStream(client.getInputStream());
                 output=new DataOutputStream(client.getOutputStream());
+                in = client.getInputStream();
                 String name = input.readUTF();
                 System.out.println("Client name: "+ name);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            start();
         }
         @Override
         public void run(){
+            System.out.println("ALI");
             try {
-                while (true){
+                while (true) {
                     String todo = input.readUTF();
-                    if(todo.equals("END")){
+                    System.out.println(todo);
+                    if (todo.equals("END")) {
                         handlers.remove(this);
-                        input.close();
-                        output.close();
+                        try {
+                            input.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            output.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         return;
                     }
-                    if(todo.equals("UPLOAD")){
+                    if (todo.equals("UPLOAD")) {
+                        try {
+                            String path = input.readUTF();
+                            System.out.println(path);
+                            outFile = new FileOutputStream(path);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        byte[] bytes = new byte[16 * 1024];
+                        int count;
+                        try {
+                            while ((count = in.read(bytes)) > 0) {
+                                outFile.write(bytes, 0, count);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
                     }
-                    if(todo.equals("DOWNLOAD")){
+                    if (todo.equals("DOWNLOAD")) {
 
                     }
                 }
-            } catch (IOException e) {
+            } catch (IOException e){
                 e.printStackTrace();
             }
-
         }
     }
 }
