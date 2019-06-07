@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class User {
     private String username;
     private String password;
-    public ArrayList<String> files = new ArrayList<>();
+    private ArrayList<String> files = new ArrayList<>();
     User(String username,String password){
         this.username=username;
         this.password=password;

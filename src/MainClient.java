@@ -1,5 +1,4 @@
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,6 +6,16 @@ public class MainClient {
     public static User loginUser = null;
     public static ArrayList<User> users = new ArrayList<>();
     public static void main(String[] args) throws IOException {
+        File members = new File("members");
+        Scanner sc = new Scanner(members);
+        String names;
+        String passwords;
+        while (sc.hasNextLine()){
+            names=sc.nextLine();
+            passwords=sc.nextLine();
+            User user = new User(names,passwords);
+            users.add(user);
+        }
         Scanner in = new Scanner(System.in);
         int todo = -1;
         boolean flag = false;
@@ -41,8 +50,11 @@ public class MainClient {
                         String username = in.nextLine();
                         System.out.println("Please enter your password");
                         String password = in.nextLine();
-                        if(loginOrRegister(username,password))
+                        if(loginOrRegister(username,password)) {
+                            File dir = new File("../"+username);
+                            dir.mkdir();
                             break;
+                        }
                     }
                     flag = true;
                     client.clientStart(loginUser);
@@ -53,7 +65,9 @@ public class MainClient {
                     client.upload(path);
                     break;
                 case 3:
-                    client.download();
+                    System.out.println("Please enter file name");
+                    String fileName=in.nextLine();
+                    client.download(fileName);
                     break;
                 case 4:
                     client.list();
@@ -86,7 +100,20 @@ public class MainClient {
             User newUser = new User(username, password);
             users.add(newUser);
             loginUser=newUser;
-            System.out.println("your Register complete");
+            try
+            {
+                FileWriter fw = new FileWriter("members",true); //the true will append the new data
+                fw.write(username+"\n");//appends the string to the file
+                fw.write(password+"\n");//appends the string to the file
+                fw.close();
+            }
+            catch(IOException ioe)
+            {
+                System.err.println("IOException: " + ioe.getMessage());
+            }
+            boolean file = new File(username).mkdir();
+            if(file)
+                System.out.println("your Register complete");
             return true;
         }
         else{

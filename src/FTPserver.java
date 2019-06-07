@@ -3,6 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
+
 public class FTPserver {
     public ArrayList<ClientHandler> handlers = new ArrayList<>();
     public void startServer() {
@@ -23,13 +24,12 @@ public class FTPserver {
         private DataInputStream input;
         private DataOutputStream output;
         private FileOutputStream outFile;
-        private InputStream in = null;
+        private FileInputStream inFile;
 
         public ClientHandler(Socket client)  {
             try {
                 input=new DataInputStream(client.getInputStream());
                 output=new DataOutputStream(client.getOutputStream());
-                in = client.getInputStream();
                 String name = input.readUTF();
                 System.out.println("Client name: "+ name);
             } catch (IOException e) {
@@ -39,7 +39,6 @@ public class FTPserver {
         }
         @Override
         public void run(){
-            System.out.println("ALI");
             try {
                 while (true) {
                     String todo = input.readUTF();
@@ -68,17 +67,33 @@ public class FTPserver {
                         }
 
                         byte[] bytes = new byte[16 * 1024];
-                        int count;
-                        try {
-                            while ((count = in.read(bytes)) > 0) {
+                        int count = 16384;
+                        while (count >= 16384) {
+                            try {
+                                count = input.read(bytes);
                                 outFile.write(bytes, 0, count);
+                                System.out.println(count);
+                            } catch (IOException e){
+                                e.printStackTrace();
                             }
+
+                        }
+                    }
+                    if (todo.equals("DOWNLOAD")) {
+                        byte[] bytes = new byte[16 * 1024];
+                        try {
+                            String name = input.readUTF();
+                            String fileName = input.readUTF();
+                            inFile = new FileInputStream("./"+name+"/"+fileName);
+                            System.out.println("./"+name+"/"+fileName);
+                            int count;
+                            while ((count = inFile.read(bytes)) > 0) {
+                                output.write(bytes, 0, count);
+                            }
+
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
-                    }
-                    if (todo.equals("DOWNLOAD")) {
 
                     }
                 }
