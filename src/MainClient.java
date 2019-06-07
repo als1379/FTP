@@ -51,7 +51,7 @@ public class MainClient {
                         System.out.println("Please enter your password");
                         String password = in.nextLine();
                         if(loginOrRegister(username,password)) {
-                            File dir = new File("../"+username);
+                            File dir = new File("../UserFiles/"+username);
                             dir.mkdir();
                             break;
                         }
@@ -111,7 +111,7 @@ public class MainClient {
             {
                 System.err.println("IOException: " + ioe.getMessage());
             }
-            boolean file = new File(username).mkdir();
+            boolean file = new File("./UserFiles/"+username).mkdir();
             if(file)
                 System.out.println("your Register complete");
             return true;

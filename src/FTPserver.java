@@ -84,7 +84,7 @@ public class FTPserver {
                         try {
                             String name = input.readUTF();
                             String fileName = input.readUTF();
-                            inFile = new FileInputStream("./"+name+"/"+fileName);
+                            inFile = new FileInputStream("./UserFiles/"+name+"/"+fileName);
                             System.out.println("./"+name+"/"+fileName);
                             int count;
                             while ((count = inFile.read(bytes)) > 0) {
