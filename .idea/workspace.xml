@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f26610d-32b1-4aa0-905f-6aed5c3d0365" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTP/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTP/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTP/FTPserver$ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTP/FTPserver$ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTP/FTPserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTP/FTPserver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTP/HELLO.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTP/MainClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTP/MainClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FTP/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FTP/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FTPserver$ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/FTPserver$ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FTPserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FTPserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HELLO.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ahmad/HELLO.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ahmad/grimaldi.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ali/HELLO.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ali/HELLO.pdf-Duplicate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ali/HELLO.pdf-Duplicate-Duplicate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asghar/grimaldi.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/members" beforeDir="false" afterPath="$PROJECT_DIR$/members" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="85" column="23" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
+            <state relative-caret-position="216">
+              <caret line="75" column="32" lean-forward="true" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,39 +137,6 @@
               <item name="FTP" type="b2602c69:ProjectViewProjectNode" />
               <item name="FTP" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="FTP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FTP" type="462c0819:PsiDirectoryNode" />
-              <item name="ahmad" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FTP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FTP" type="462c0819:PsiDirectoryNode" />
-              <item name="ali" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FTP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FTP" type="462c0819:PsiDirectoryNode" />
-              <item name="asghar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FTP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FTP" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FTP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FTP" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FTP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FTP" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="FTP" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -209,7 +167,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainClient">
+  <component name="RunManager" selected="Application.MainServer">
     <configuration name="FTPserver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FTPserver" />
       <module name="FTP" />
@@ -258,8 +216,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainClient" />
         <item itemvalue="Application.MainServer" />
+        <item itemvalue="Application.MainClient" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.FTPserver" />
       </list>
@@ -284,9 +242,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="32" width="1853" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26488593" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26488593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -295,7 +252,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32925472" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32925472" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39933258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -419,8 +376,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="85" column="23" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
+        <state relative-caret-position="216">
+          <caret line="75" column="32" lean-forward="true" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
